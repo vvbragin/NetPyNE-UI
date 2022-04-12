@@ -35,7 +35,7 @@ class TestNetPyNEModelInterpreter(unittest.TestCase):
             logging.error("Error loading mechanisms", exc_info=True)
 
     def getGeppettoModel(self, netParams, simConfig):
-        sim.create(netParams, simConfig, True)
+        sim.create(netParams, simConfig, True, clearAll=True)
         sim.gatherData()
 
         modelInterpreter = NetPyNEModelInterpreter()

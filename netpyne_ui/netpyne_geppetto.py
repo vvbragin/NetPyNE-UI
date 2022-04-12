@@ -451,7 +451,7 @@ class NetPyNEGeppetto:
                     if args['loadSimData']:
                         wake_up_geppetto = True
                         if not self.doIhaveInstOrSimData()['haveInstance']:
-                            sim.create(specs.NetParams(), specs.SimConfig())
+                            sim.create(specs.NetParams(), specs.SimConfig(), clearAll=True)
                             sim.net.defineCellShapes()
                             sim.gatherData(gatherLFP=False)
                         sim.loadSimData(args['jsonModelFolder'])
@@ -651,7 +651,7 @@ class NetPyNEGeppetto:
 
             #netcoded = jsonpickle.encode(self.netParams, unpicklable=False)
             #simcoded = jsonpickle.encode(self.simConfig, unpicklable=False)
-            sim.create(self.netParams, self.simConfig)
+            sim.create(self.netParams, self.simConfig, clearAll=True)
             sim.net.defineCellShapes()  # creates 3d pt for cells with stylized geometries
             sim.gatherData(gatherLFP=False)
 
