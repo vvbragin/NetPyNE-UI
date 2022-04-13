@@ -19,6 +19,7 @@ import {
   SIMULATE_NETWORK,
   SHOW_NETWORK,
   editModel,
+  resetState,
   EDIT_MODEL,
   LOAD_TUTORIAL,
   RESET_MODEL,
@@ -342,6 +343,9 @@ export default (store) => (next) => (action) => {
       break;
     }
     case LOAD_TUTORIAL: {
+
+      store.dispatch(resetState);
+
       const tutName = action.payload.replace('.py', '');
       // GEPPETTO.trigger(GEPPETTO.Events.Show_spinner, `Loading tutorial ${tutName}`);
 

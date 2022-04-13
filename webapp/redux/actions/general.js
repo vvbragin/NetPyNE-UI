@@ -15,6 +15,7 @@ export const DELETE_NETPARAMS_OBJ = 'DELETE_NETPARAMS_OBJ';
 export const CLOSE_DIALOG = 'CLOSE_DIALOG';
 export const OPEN_DIALOG = 'OPEN_DIALOG';
 export const LOAD_TUTORIAL = 'LOAD_TUTORIAL';
+export const RESET_STATE =  'RESET_STATE';
 export const OPEN_CONFIRMATION_DIALOG = 'OPEN_CONFIRMATION_DIALOG';
 export const CLOSE_CONFIRMATION_DIALOG = 'CLOSE_CONFIRMATION_DIALOG';
 export const AUTOMATIC_INSTANTIATION = 'AUTOMATIC_INSTANTIATION';
@@ -42,6 +43,8 @@ export const simulateNetwork = (allTrials = false) => ({
 export const showNetwork = { type: SHOW_NETWORK };
 
 export const editModel = { type: EDIT_MODEL };
+
+export const resetState = { type: RESET_STATE };
 
 export const resetModel = { type: RESET_MODEL };
 
