@@ -51,8 +51,8 @@ const applySelection = (data, selectedInstances) => {
 // reducer function
 export default function reduceGeneral (state = GENERAL_DEFAULT_STATE, action) {
   switch (action.type) {
-    case Actions.RESET_STATE:
-      return GENERAL_DEFAULT_STATE;
+    // case Actions.RESET_STATE:
+    //   return GENERAL_DEFAULT_STATE;
     case Actions.UPDATE_CARDS:
       return { ...state, updates: state.updates + 1 };
     case Actions.MODEL_LOADED:

@@ -25,6 +25,7 @@ import {
   RESET_MODEL,
   showNetwork,
   addInstancesToCanvas,
+  resetModel,
 } from '../actions/general';
 import { openBackendErrorDialog } from '../actions/errors';
 import { closeDrawerDialogBox } from '../actions/drawer';
@@ -344,7 +345,7 @@ export default (store) => (next) => (action) => {
     }
     case LOAD_TUTORIAL: {
 
-      store.dispatch(resetState);
+      //store.dispatch(resetModel);
 
       const tutName = action.payload.replace('.py', '');
       // GEPPETTO.trigger(GEPPETTO.Events.Show_spinner, `Loading tutorial ${tutName}`);
@@ -363,11 +364,19 @@ export default (store) => (next) => (action) => {
         simConfigVariable: 'simConfig',
       };
 
-      pythonCall({
-        cmd: NETPYNE_COMMANDS.importModel,
-        args: params,
-      })
-        .then((response) => console.log(response));
+      IPython.notebook.restart_kernel({ confirm: false })
+      .then(()=>{
+
+        pythonCall({
+          cmd: NETPYNE_COMMANDS.importModel,
+          args: params,
+        })
+        .then((response) => {
+          window.location.reload();
+        });
+
+      });
+
       break;
     }
     case GET_EXPERIMENTS: {
