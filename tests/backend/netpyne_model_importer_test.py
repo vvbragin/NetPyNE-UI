@@ -70,12 +70,12 @@ class TestNetPyNEModelInterpreter(unittest.TestCase):
       
       print(params['jsonModelFolder'])
 
-      netpyne = NetPyNEGeppetto()
+      # netpyne = NetPyNEGeppetto()
 
-      netpyne.loadModel(params)
-      netpyne.simulate_single_model()
+      # netpyne.loadModel(params)
+      # netpyne.simulate_single_model()
 
-      #return False
+      return True
 
 
 if __name__ == '__main__':
